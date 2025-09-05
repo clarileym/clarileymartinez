@@ -1,0 +1,334 @@
+/* Color Palette */
+:root {
+  --color-jewel: #4b2e83;
+  --color-jewel-light: #6e49b0;
+  --color-neutral-light: #f7f6f3;
+  --color-neutral-dark: #2f2f2f;
+  --color-neutral-mid: #7d7d7d;
+  --color-accent: #b78eff;
+  --color-text: var(--color-neutral-dark);
+  --color-bg: var(--color-neutral-light);
+  --color-link: var(--color-jewel);
+  --color-link-hover: var(--color-jewel-light);
+  --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+  --color-text: var(--color-neutral-light);
+  --color-bg: var(--color-neutral-dark);
+  --color-link: var(--color-accent);
+  --color-link-hover: var(--color-jewel-light);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "circe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 16px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "ashemore-condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  color: var(--color-jewel);
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+h2 {
+    font-family: "ashemore-condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-link-hover);
+  outline: none;
+}
+
+.site-header {
+  background: var(--color-neutral-light);
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--color-jewel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  transition: background var(--transition-speed);
+}
+
+[data-theme="dark"] .site-header {
+  background: var(--color-neutral-dark);
+}
+
+.site-header h1 {
+  font-family: 'Ashemore', serif;
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--color-jewel);
+  user-select: none;
+}
+
+.site-header p {
+  margin: 0;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-jewel-light);
+  user-select: none;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.2rem;
+}
+
+nav ul li a {
+  font-family: 'Continuo', cursive;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--color-jewel);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: var(--color-jewel-light);
+  color: var(--color-neutral-light);
+  outline: none;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-jewel);
+  transition: color var(--transition-speed);
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus {
+  color: var(--color-jewel-light);
+  outline: none;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-jewel);
+}
+
+.intro p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Roboto Mono', monospace, sans-serif;
+}
+
+.cta {
+  font-family: 'Continuo', cursive;
+  font-size: 1.25rem;
+  color: var(--color-neutral-light);
+  background-color: var(--color-jewel);
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  display: inline-block;
+  transition: background-color var(--transition-speed);
+}
+
+.cta:hover,
+.cta:focus {
+  background-color: var(--color-jewel-light);
+  outline: none;
+}
+
+.project-group {
+  margin-bottom: 3rem;
+}
+
+.project-group h2 {
+  border-bottom: 3px solid var(--color-jewel);
+  padding-bottom: 0.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.project {
+  margin-bottom: 2rem;
+}
+
+.project h3 {
+  font-family: 'Ashemore', serif;
+  color: var(--color-jewel-light);
+  margin-bottom: 0.5rem;
+}
+
+.project p {
+  font-family: 'Roboto Mono', monospace, sans-serif;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.project-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(75, 46, 131, 0.3);
+  user-select: none;
+}
+
+.bio {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bio-image {
+  max-width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(75, 46, 131, 0.4);
+  user-select: none;
+}
+
+.bio-text {
+  flex: 1;
+  font-family: 'Roboto Mono', monospace, sans-serif;
+  font-size: 1.1rem;
+}
+
+.download-resume {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: var(--color-jewel);
+  color: var(--color-neutral-light);
+  font-family: 'Continuo', cursive;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color var(--transition-speed);
+}
+
+.download-resume:hover,
+.download-resume:focus {
+  background-color: var(--color-jewel-light);
+  outline: none;
+}
+
+.site-footer {
+  background-color: var(--color-neutral-light);
+  padding: 1rem 2rem;
+  border-top: 2px solid var(--color-jewel);
+  text-align: center;
+  font-family: 'Roboto Mono', monospace, sans-serif;
+  color: var(--color-jewel);
+  user-select: none;
+  transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+[data-theme="dark"] .site-footer {
+  background-color: var(--color-neutral-dark);
+  color: var(--color-neutral-light);
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-link {
+  font-family: 'Continuo', cursive;
+  color: var(--color-jewel);
+  font-weight: 600;
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: var(--color-jewel-light);
+  outline: none;
+}
+
+/* Contact form styles */
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Roboto Mono', monospace, sans-serif;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--color-jewel);
+  border-radius: 6px;
+  font-family: 'Roboto Mono', monospace, sans-serif;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: border-color var(--transition-speed);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-jewel-light);
+  outline: none;
+}
+
+.contact-form button {
+  background-color: var(--color-jewel);
+  color: var(--color-neutral-light);
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Continuo', cursive;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+  background-color: var(--color-jewel-light);
+  outline: none;
+}
